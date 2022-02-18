@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+<h1>登録書籍一覧</h1>
+<p><a th:href="@{/book/user/add}">追加</a></p>
+<p><a th:href="@{/book/user/search}">検索</a></p>
+<p><a th:href="@{/book/userLogout}">ログアウト</a></p>
+
+<table border="1">
+
+	<thead>
+		<tr>
+			<th scope="col">書籍名</th>
+			<th scope="col">著者</th>
+			<th scope="col">出版社</th>
+			<th scope="col" colspan="3">操作</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<tr>
+		<th>斜陽</th>
+		<td class="txt">大宰治</td>
+		<td  class="txt">岩波文庫</td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">詳細</a></td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">編集</a></td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">削除</a></td>
+	</tr>
+	
+		<tr>
+		<th>銀河鉄道の夜</th>
+		<td class="txt">宮沢賢治</td>
+		<td  class="txt">新潮文庫</td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">詳細</a></td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">編集</a></td>
+		<td  class="txt"><a href="https://churaumi.okinawa/">削除</a></td>
+	</tr>
+	
+	</tbody>
+	
+</table>
+
+</body>
+
+</html>

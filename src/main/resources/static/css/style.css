@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+	background: rgb(192, 192, 192);
+	
+	 font-family: "Open Sans", sans-serif;
+  	line-height: 1.25;
+	
+}
+
+/*
+フォーム
+*/
+
+.contact {
+  width: 700px;/*横幅*/
+  margin: 0 auto;/*中央寄せ*/
+  padding: 40px 0;
+}
+
+.contact-ttl{
+  color: #333;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-item,
+.contact-body {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-item {
+    text-align: left;
+    width: 30%;
+    background-color: #eee;
+}
+
+.contact-body {
+    width: 70%;
+}
+
+.form-text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 400px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/*
+.contact-submit {
+  	width: 250px;
+  	background-color: #333;
+  	color: #fff;
+  	font-weight: bold;
+	display: block;
+	margin: 0 auto;
+	font-size: 16px;
+	padding: 15px;
+	border-radius: 100vh;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+}
+*/
+
+
+.contact-skill-txt {
+    margin-left: 5px;
+}
+
+.submit {
+	display: flex;
+	justify-content: center;
+}
+
+/*
+ボタン
+*/
+
+/*
+.submit input {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: button;
+	appearance: none;
+	border-radius: 0;
+	width:100%;
+	font-size:16px;
+	cursor:pointer;
+	border:none;
+	display: inline-block;
+	width:200px;
+	background:#000;
+	color: #fff;
+	font-weight:bold;
+	margin:5px 10px;
+	padding: 20px 15px;
+}
+*/
+
+.submit input {
+	 	width: 250px;
+  	background-color: #333;
+  	color: #fff;
+  	font-weight: bold;
+	display: block;
+	margin: 0 auto;
+	font-size: 16px;
+	padding: 15px;
+	border-radius: 100vh;
+	border: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	}
+
+.submit input.submit {
+	background-color:#004B88;
+}
+
+/*
+書籍リスト
+*/
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.30;
+}
+
+table {
+  border-color: #ffc488;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 700px;
+      box-shadow: 0 0 15px -6px #00000073;
+}
+
+table tr {
+  background-color: #fff;
+}
+
+table tbody tr:hover{
+  background-color: #fffae9;
+}
+
+table th,
+table td {
+  padding: .35em 1em;
+  border-bottom: 1px solid #eee;
+}
+
+table thead th {
+    font-size: .85em;
+    padding: 1em;
+}
+
+table thead tr{
+  background-color: #FFC107;
+  color:#fff;
+}
+
+table tbody th {
+  text-align: left;
+  font-size: .8em;
+}
+
+.txt{
+   text-align: left;
+   font-size: .75em;
+}
+
+@media screen and (max-width: 600px) {
+  table{width: 100%;}
+}
+
+
