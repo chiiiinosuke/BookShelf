@@ -8,93 +8,50 @@
 <body>
 
 	<div class="contact">
-	<h1 class="contact-ttl">ユーザー登録</h1>
+	<h1 class="contact-ttl">新規登録</h1>
 
-		<form action="" method="post">
+		<form th:action="@{/book/userAdd}" method="post" th:object="${user}">
 		
 		  <table class="contact-table">
 		  
 		  	<tr>
-			  <th class="contact-item">ID</th>
+			  <th class="contact-item">ID (10文字以内)</th>
 			  <td class="contact-body">
-			    <input type="text" name="ID" class="form-text" />
+			    <input type="text" th:field="*{loginId}" class="form-text" />
 			  </td>
 			</tr>
 			
 			<tr>
-			  <th class="contact-item">パスワード</th>
+			  <th class="contact-item">パスワード (6文字以上)</th>
 			  <td class="contact-body">
-			    <input type="text" name="pass" class="form-text" />
+			    <input type="password" th:field="*{loginPass}" class="form-text" />
 			  </td>
 			</tr>
 		  
 		  	<tr>
-			  <th class="contact-item">名前</th>
+			  <th class="contact-item">名前 (20文字以内)</th>
 			  <td class="contact-body">
-			    <input type="text" name="name" class="form-text" />
+			    <input type="text" th:field="*{name}" class="form-text" />
 			  </td>
 			</tr>
 			
 			<tr>
 			  <th class="contact-item">メール</th>
 			  <td class="contact-body">
-			    <input type="email" name="email" class="form-text" />
+			    <input type="email" th:field="*{email}" class="form-text" />
 			  </td>
 			</tr>
 			
 		  </table>
 		  
-		  <div class="submit">
-		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
-		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/userLogin} + '\''" value="登録" class="submit">
-		  </div>
-		  
-		</form>
-
-	</div>
-	
-	
-	
-	<div class="contact">
-	<h1 class="contact-ttl">ユーザー登録</h1>
-
-		<form th:action="@{/book/user/add}" method="post">
-		
-		  <table class="contact-table">
-		  
-		  	<tr>
-			  <th class="contact-item">ID</th>
-			  <td class="contact-body">
-			    <input type="text" name="ID" class="form-text" />
-			  </td>
-			</tr>
-			
-			<tr>
-			  <th class="contact-item">パスワード</th>
-			  <td class="contact-body">
-			    <input type="text" name="pass" class="form-text" />
-			  </td>
-			</tr>
-		  
-		  	<tr>
-			  <th class="contact-item">名前</th>
-			  <td class="contact-body">
-			    <input type="text" name="name" class="form-text" />
-			  </td>
-			</tr>
-			
-			<tr>
-			  <th class="contact-item">メール</th>
-			  <td class="contact-body">
-			    <input type="email" name="email" class="form-text" />
-			  </td>
-			</tr>
-			
-		  </table>
+		  <p class="error" th:errors="*{loginId}"></p>
+		  <p class="error" th:errors="*{loginPass}"></p>
+		  <p class="error" th:errors="*{name}"></p>
+		  <p class="error" th:errors="*{email}"></p>
 		  
 		  <div class="submit">
 		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
-		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/userLogin} + '\''" value="登録" class="submit">
+		  <input type="submit" value="登録" class="submit">
 		  </div>
 		  
 		</form>
