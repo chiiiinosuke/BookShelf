@@ -49,6 +49,11 @@ public class BookController {
 		return "bookSearch";
 	}
 	
+	@GetMapping("/search/result")
+	public String searchResult() {
+		return "bookSearchResult";
+	}
+	
 	@GetMapping("/detail")
 	public String detail() {
 		return "bookDetail";
@@ -57,6 +62,11 @@ public class BookController {
 	@GetMapping("/edit")
 	public String edit() {
 		return "bookEdit";
+	}
+	
+	@GetMapping("/delete")
+	public String delete() {
+		return "bookDelete";
 	}
 	
 	

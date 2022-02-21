@@ -7,10 +7,14 @@
 </head>
 
 <body>
-<h1>登録書籍一覧</h1>
+
 <p><a th:href="@{/book/user/add}">追加</a></p>
 <p><a th:href="@{/book/user/search}">検索</a></p>
 <p><a th:href="@{/book/userLogout}">ログアウト</a></p>
+
+
+<div class="contact">
+<h1 class="contact-ttl">登録書籍一覧</h1>
 
 <table border="1">
 
@@ -28,9 +32,9 @@
 		<th>斜陽</th>
 		<td class="txt">大宰治</td>
 		<td  class="txt">岩波文庫</td>
-		<td  class="txt"><a href="https://churaumi.okinawa/">詳細</a></td>
-		<td  class="txt"><a href="https://churaumi.okinawa/">編集</a></td>
-		<td  class="txt"><a href="https://churaumi.okinawa/">削除</a></td>
+		<td  class="txt"><a th:href="@{/book/user/detail}" >詳細</a></td>
+		<td  class="txt"><a th:href="@{/book/user/edit}" >編集</a></td>
+		<td  class="txt"><a th:href="@{/book/user/delete}" >削除</a></td>
 	</tr>
 	
 		<tr>
@@ -45,6 +49,8 @@
 	</tbody>
 	
 </table>
+
+<div>
 
 </body>
 

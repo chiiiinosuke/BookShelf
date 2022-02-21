@@ -45,6 +45,55 @@
 		  </table>
 		  
 		  <div class="submit">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/userLogin} + '\''" value="登録" class="submit">
+		  </div>
+		  
+		</form>
+
+	</div>
+	
+	
+	
+	<div class="contact">
+	<h1 class="contact-ttl">ユーザー登録</h1>
+
+		<form th:action="@{/book/user/add}" method="post">
+		
+		  <table class="contact-table">
+		  
+		  	<tr>
+			  <th class="contact-item">ID</th>
+			  <td class="contact-body">
+			    <input type="text" name="ID" class="form-text" />
+			  </td>
+			</tr>
+			
+			<tr>
+			  <th class="contact-item">パスワード</th>
+			  <td class="contact-body">
+			    <input type="text" name="pass" class="form-text" />
+			  </td>
+			</tr>
+		  
+		  	<tr>
+			  <th class="contact-item">名前</th>
+			  <td class="contact-body">
+			    <input type="text" name="name" class="form-text" />
+			  </td>
+			</tr>
+			
+			<tr>
+			  <th class="contact-item">メール</th>
+			  <td class="contact-body">
+			    <input type="email" name="email" class="form-text" />
+			  </td>
+			</tr>
+			
+		  </table>
+		  
+		  <div class="submit">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
 		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/userLogin} + '\''" value="登録" class="submit">
 		  </div>
 		  

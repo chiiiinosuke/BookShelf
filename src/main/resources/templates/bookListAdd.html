@@ -40,9 +40,16 @@
 			</tr>
 			
 			<tr>
-			  <th class="contact-item">ISBN</th>
+			  <th class="contact-item">ISBN (13桁)</th>
 			  <td class="contact-body">
 			    <input type="text" name="name" class="form-text" />
+			  </td>
+			</tr>
+			
+			<tr>
+			  <th class="contact-item">出版日</th>
+			  <td class="contact-body">
+			    <input type="date" name="name" class="form-text" />
 			  </td>
 			</tr>
 			
@@ -55,7 +62,9 @@
 			
 		  </table>
 		
-		  <input class="contact-submit" type="submit" value="追加" />
+		  <div class="submit">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/user/list} + '\''" value="追加" class="submit">
+		  </div>
 
 		  
 		</form>

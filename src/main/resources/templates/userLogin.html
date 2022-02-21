@@ -32,6 +32,7 @@
 		  </table>
 		  
 		  <div class="submit">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
 		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/user/list} + '\''" value="ログイン" class="submit">
 		  </div>
 		  
