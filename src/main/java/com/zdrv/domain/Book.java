@@ -1,7 +1,11 @@
 package com.zdrv.domain;
 
-import javax.validation.constraints.Email;
+import java.util.Date;
+
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
@@ -21,7 +25,15 @@ public class Book {
 	@Size(max=20)
 	private String publisher;
 	
-	@NotBlank
-	private int isbn;
+	@NotNull
+	@Digits(integer = 13, fraction = 0)
+	private long isbn;
+	
+	@NotNull
+	@PastOrPresent
+	private Date publicationAt;
+	
+	@NotNull
+	private Integer price;
 	
 }

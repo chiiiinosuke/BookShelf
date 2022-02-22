@@ -15,39 +15,42 @@
 		  <table class="contact-table">
 		  
 		  	<tr>
-			  <th class="contact-item">ID (10文字以内)</th>
+			  <th class="contact-item">ID (10文字以内)
+			  <p class="error" th:errors="*{loginId}"></p>
+			  </th>
 			  <td class="contact-body">
 			    <input type="text" th:field="*{loginId}" class="form-text" />
 			  </td>
 			</tr>
 			
 			<tr>
-			  <th class="contact-item">パスワード (6文字以上)</th>
+			  <th class="contact-item">パスワード (6文字以上)
+			  <p class="error" th:errors="*{loginPass}"></p>
+			  </th>
 			  <td class="contact-body">
 			    <input type="password" th:field="*{loginPass}" class="form-text" />
 			  </td>
 			</tr>
 		  
 		  	<tr>
-			  <th class="contact-item">名前 (20文字以内)</th>
+			  <th class="contact-item">名前 (20文字以内)
+			  <p class="error" th:errors="*{name}"></p>
+			  </th>
 			  <td class="contact-body">
 			    <input type="text" th:field="*{name}" class="form-text" />
 			  </td>
 			</tr>
 			
 			<tr>
-			  <th class="contact-item">メール</th>
+			  <th class="contact-item">メール
+			  <p class="error" th:errors="*{email}"></p>
+			  </th>
 			  <td class="contact-body">
 			    <input type="email" th:field="*{email}" class="form-text" />
 			  </td>
 			</tr>
 			
 		  </table>
-		  
-		  <p class="error" th:errors="*{loginId}"></p>
-		  <p class="error" th:errors="*{loginPass}"></p>
-		  <p class="error" th:errors="*{name}"></p>
-		  <p class="error" th:errors="*{email}"></p>
 		  
 		  <div class="submit">
 		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
