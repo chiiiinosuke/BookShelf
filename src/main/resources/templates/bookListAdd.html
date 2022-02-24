@@ -4,19 +4,23 @@
 	<meta charset="UTF-8" />
 	<title>Document</title>
 	<link rel="stylesheet" th:href="@{/css/style.css}" />
-	<style>
-	.error {
-		color: red;
-	}
-	</style>
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<p><a th:href="@{/book/user/list}">一覧</a></p>
-<p><a th:href="@{/book/user/search}">検索</a></p>
-<p><a th:href="@{/book/userLogout}">ログアウト</a></p>
+<header>
+	<h1>
+		<a th:href="@{/book/home}">Book Shelf</a>
+	</h1>
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/user/list}">一覧</a></li>
+			<li><a th:href="@{/book/user/search}">検索</a></li>
+			<li><a th:href="@{/book/userLogout}">ログアウト</a></li>
+		</ul>
+	</nav>
+</header>
 
 	<div class="contact">
 	<h1 class="contact-ttl">書籍の追加</h1>
@@ -82,6 +86,7 @@
 		  </table>
 		
 		  <div class="submit">
+		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/user/bookSearchResult} + '\''" value="追加" class="submit">
 		  <input type="submit" value="追加" class="submit">
 		  </div>
 
@@ -89,6 +94,10 @@
 		</form>
 
 	</div>
+    <!-- footer -->
+    <footer>
+  	  <p>© All rights reserved by Horafuki.</p>
+    </footer>
 	
 
 </body>

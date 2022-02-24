@@ -7,10 +7,19 @@
 </head>
 
 <body>
-<p><a th:href="@{/book/user/add}">追加</a></p>
-<p><a th:href="@{/book/user/list}">一覧</a></p>
-<p><a th:href="@{/book/userLogout}">ログアウト</a></p>
 
+<header>
+	<h1>
+		<a th:href="@{/book/home}">Book Shelf</a>
+	</h1>
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/user/add}">追加</a></li>
+			<li><a th:href="@{/book/user/list}">一覧</a></li>
+			<li><a th:href="@{/book/userLogout}">ログアウト</a></li>
+		</ul>
+	</nav>
+</header>
 
 	<div class="contact">
 	<h1 class="contact-ttl">検索結果</h1>
@@ -41,6 +50,11 @@
 	</table>
 
 </div>
+
+<!-- footer -->
+    <footer>
+  	  <p>© All rights reserved by Horafuki.</p>
+    </footer>
 
 </body>
 

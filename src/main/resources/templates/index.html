@@ -2,17 +2,36 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" th:href="@{/css/style.css}" />
+	<title>BookShelf ホーム</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" th:href="@{/css/style_top.css}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<h1>ホーム</h1>
 
+<header class="main-top">
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/userAdd}">新規登録</a></li>
+			<li><a th:href="@{/book/userLogin}">ログイン</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="main-visual">
+
+</div>
+
+
+
+<!-- 
 <div class="submit">
 <input type="button" th:attr="onClick='location.href=\'' + @{/book/userAdd} + '\''" value="新規登録" class="back">
 <input type="submit" th:attr="onClick='location.href=\'' + @{/book/userLogin} + '\''" value="ログイン" class="submit"/>
 </div>
+ -->
 
 </body>
 

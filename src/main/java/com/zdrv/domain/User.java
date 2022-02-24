@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 public class User {
 	
+	private Integer id;
+	
 	@NotBlank
 	@Size(max=10)
 	private String loginId;
@@ -26,6 +28,12 @@ public class User {
 	@NotBlank
 	@Email
 	private String email;
+	
+	
+	private Integer level;
+	
+	
+	private String status;
 	
 	
 	

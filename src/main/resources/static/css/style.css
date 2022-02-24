@@ -4,11 +4,69 @@
 
 
 body {
-	background: rgb(192, 192, 192);
+	background-color: #98B4AA;
 	
-	 font-family: "Open Sans", sans-serif;
+	/*
+	font-family: "Open Sans", sans-serif;
+	*/
+	
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
   	line-height: 1.25;
+  	
+  	margin: 0;
+    padding: 0;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 	
+}
+
+.msg{
+	margin: 50px auto;
+	font-size: 12px;
+	text-align: center;
+	
+}
+
+/*
+ヘッダーの設定
+*/
+header{
+    width: 100%;
+    padding: 30px 4% 10px;
+    background-color: #495371;
+    position: flexed;
+    top: 0;
+    display:flex;
+    align-items: center;
+}
+
+header h1 {
+   color: #fff;
+   margin: 0; padding: 0;
+   font-size: 20px;
+}
+
+header a {
+	text-decoration: none;
+    color: #fff;
+}
+
+header ul {
+	list-style: none;
+	margin: 0;
+	display: flex;
+	
+}
+
+header li {
+	margin: 0 0 0 25px;
+	font-size: 14px;
+}
+
+nav {
+	margin: 0 0 0 auto;
 }
 
 /*
@@ -209,6 +267,23 @@ table tbody th {
 
 @media screen and (max-width: 600px) {
   table{width: 100%;}
+}
+
+/*
+footer
+*/
+
+footer{
+	margin-top: auto;
+    width: 100%;
+    height: 80px;
+    color: #fff;
+    background-color: #74959A;
+    text-align: center;
+}
+
+.footer-text {
+  color: #fff;
 }
 
 

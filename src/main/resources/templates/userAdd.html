@@ -7,6 +7,17 @@
 </head>
 <body>
 
+	<header>
+		<h1>
+			<a th:href="@{/book/home}">Book Shelf</a>
+		</h1>
+		<nav class="pc-nav">
+			<ul>
+				<li><a th:href="@{/book/userLogin}">ログイン</a></li>
+			</ul>
+		</nav>
+    </header>
+
 	<div class="contact">
 	<h1 class="contact-ttl">新規登録</h1>
 
@@ -60,6 +71,11 @@
 		</form>
 
 	</div>
+	
+	<!-- footer -->
+  <footer>
+  	<p>© All rights reserved by Horafuki.</p>
+  </footer>
 
 </body>
 </html>

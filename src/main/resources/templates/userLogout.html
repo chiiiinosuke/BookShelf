@@ -7,9 +7,29 @@
 </head>
 
 <body>
-<h1>ログアウトしました</h1>
 
-<a th:href="@{/book/home/}">ホーム</a>
+<header>
+	<h1>
+		<a th:href="@{/book/home}">Book Shelf</a>
+	</h1>
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/user/list}">一覧</a></li>
+			<li><a th:href="@{/book/user/search}">検索</a></li>
+			<li><a th:href="@{/book/userLogin}">ログイン</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div class="msg">
+<h1>ログアウトしました</h1>
+</div>
+
+<!-- footer -->
+    <footer>
+  	  <p>© All rights reserved by Horafuki.</p>
+    </footer>
+
 </body>
 
 </html>

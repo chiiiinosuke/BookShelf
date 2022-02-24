@@ -7,25 +7,41 @@
 </head>
 
 <body>
+	
+	<header>
+		<h1>
+			<a th:href="@{/book/home}">Book Shelf</a>
+		</h1>
+		<nav class="pc-nav">
+			<ul>
+				<li><a th:href="@{/book/userAdd}">新規登録</a></li>
+			</ul>
+		</nav>
+    </header>
+
 
 	<div class="contact">
 	<h1 class="contact-ttl">ログイン</h1>
 
-		<form action="" method="post">
+		<form action="" method="post" th:object="${user}">
 		
 		  <table class="contact-table">
 		  
 		  	<tr>
-			  <th class="contact-item">ID</th>
+			  <th class="contact-item">ID
+			  <p class="error" th:errors="*{loginId}"></p>
+			  </th>
 			  <td class="contact-body">
-			    <input type="text" name="ID" class="form-text" />
+			    <input type="text" th:field="*{loginId}" class="form-text" />
 			  </td>
 			</tr>
 			
 			<tr>
-			  <th class="contact-item">パスワード (6文字以上)</th>
+			  <th class="contact-item">パスワード (6文字以上)
+			  <p class="error" th:errors="*{loginPass}"></p>
+			  </th>
 			  <td class="contact-body">
-			    <input type="text" name="pass" class="form-text" />
+			    <input type="password" th:field="*{loginPass}" class="form-text" />
 			  </td>
 			</tr>
 			
@@ -33,7 +49,7 @@
 		  
 		  <div class="submit">
 		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/home} + '\''" value="戻る" class="back">
-		  <input type="button" th:attr="onClick='location.href=\'' + @{/book/user/list} + '\''" value="ログイン" class="submit">
+		  <input type="submit" th:attr="onClick='location.href=\'' + @{/book/user/list} + '\''" value="ログイン" class="submit">
 		  </div>
 		  
 		</form>
@@ -42,7 +58,12 @@
 
 	<!-- <input class="contact-submit" type="submit" th:attr="onClick='location.href=\'' + @{/book/user/list} + '\''" value="ログイン" /> -->
 
-
+	<!-- footer -->
+    <footer>
+  	  <p>© All rights reserved by Horafuki.</p>
+    </footer>
+	
+	
 </body>
 
 

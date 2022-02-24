@@ -3,14 +3,25 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <body>
 
-<p><a th:href="@{/book/user/add}">追加</a></p>
-<p><a th:href="@{/book/user/search}">検索</a></p>
-<p><a th:href="@{/book/userLogout}">ログアウト</a></p>
+
+<header>
+	<h1>
+		<a th:href="@{/book/home}">Book Shelf</a>
+	</h1>
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/user/add}">追加</a></li>
+			<li><a th:href="@{/book/user/search}">検索</a></li>
+			<li><a th:href="@{/book/userLogout}">ログアウト</a></li>
+		</ul>
+	</nav>
+</header>
 
 
 <div class="contact">
@@ -50,7 +61,12 @@
 	
 </table>
 
-<div>
+</div>
+
+<!-- footer -->
+  <footer>
+  	<p>© All rights reserved by Horafuki.</p>
+  </footer>
 
 </body>
 

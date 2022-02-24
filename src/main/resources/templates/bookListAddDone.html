@@ -7,14 +7,27 @@
 </head>
 <body>
 
-<p><a th:href="@{/book/user/list}">一覧</a></p>
-<p><a th:href="@{/book/user/search}">検索</a></p>
-<p><a th:href="@{/book/userLogout}">ログアウト</a></p>
+<header>
+	<h1>
+		<a th:href="@{/book/home}">Book Shelf</a>
+	</h1>
+	<nav class="pc-nav">
+		<ul>
+			<li><a th:href="@{/book/user/list}">一覧</a></li>
+			<li><a th:href="@{/book/user/search}">検索</a></li>
+			<li><a th:href="@{/book/userLogout}">ログアウト</a></li>
+		</ul>
+	</nav>
+</header>
 
-<h1>追加完了</h1>
+<div class="msg">
+<h1>追加が完了しました</h1>
+</div>
 
-
-
+<!-- footer -->
+    <footer>
+  	  <p>© All rights reserved by Horafuki.</p>
+    </footer>
 
 </body>
 </html>
