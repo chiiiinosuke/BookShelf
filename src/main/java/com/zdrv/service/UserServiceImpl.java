@@ -34,9 +34,17 @@ public class UserServiceImpl implements UserService{
 		
 		//ログインIDとパスワードが正しい処理
 		return user;
-		
-		
+
 	}
+
+	@Override
+	public void addUser(User userInfo) {
+		mapper.insert(userInfo);
+	}
+	
+	
+	
+	
 	
 	
 	

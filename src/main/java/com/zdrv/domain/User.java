@@ -4,6 +4,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.zdrv.validation.AddGroup;
+import com.zdrv.validation.LoginGroup;
+
 import lombok.Data;
 
 
@@ -12,20 +15,20 @@ public class User {
 	
 	private Integer id;
 	
-	@NotBlank
-	@Size(max=10)
+	@NotBlank (groups={AddGroup.class,LoginGroup.class})
+	@Size(max=10, groups={AddGroup.class,LoginGroup.class})
 	private String loginId;
 	
-	@NotBlank
-	@Size(min = 6)
-	@Size(max=50)
+	@NotBlank (groups={AddGroup.class,LoginGroup.class})
+	@Size(min = 6, groups={AddGroup.class,LoginGroup.class})
+	@Size(max=50, groups={AddGroup.class,LoginGroup.class})
 	private String loginPass;
 	
-	@NotBlank
+	@NotBlank (groups={AddGroup.class})
 	@Size(max=20)
 	private String name;
 	
-	@NotBlank
+	@NotBlank (groups={AddGroup.class})
 	@Email
 	private String email;
 	

@@ -6,5 +6,12 @@
 		SELECT * FROM users
 		WHERE login_id = #{loginId}
 	</select>
+	
+	<insert id="insert" parameterType="com.zdrv.domain.User" >
+		INSERT INTO users 
+		(login_id, login_pass, name, email) 
+		VALUES 
+		(#{loginId}, #{loginPass}, #{name},#{email});
+	</insert >
 
 </mapper>

@@ -1,12 +1,12 @@
 package com.zdrv.controller;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zdrv.domain.User;
 import com.zdrv.service.UserService;
+import com.zdrv.validation.AddGroup;
+import com.zdrv.validation.LoginGroup;
 
 @Controller
 @RequestMapping("/book")
@@ -24,6 +26,7 @@ public class UserController {
 	
 	@GetMapping("/userLogin")
 	public String userLogin(Model model ) {
+		
 		model.addAttribute("user", new User());
 		return "userLogin";
 	}
@@ -31,10 +34,11 @@ public class UserController {
 	@PostMapping("/userLogin")
 	public String loginPost(
 			HttpSession session,
-			@Valid User user,
+			@Validated(LoginGroup.class) User user,
 			Errors errors) {
 		if(errors.hasErrors()) {
 			//未入力の場合弾く
+			System.out.println(1);
 			return "userLogin";
 		}
 		
@@ -42,13 +46,14 @@ public class UserController {
 		
 		//IDまたはパスワードが違う場合
 		if (loginUser == null) {
+			System.out.println(2);
 			errors.rejectValue("userLogin", "error.login", "IDまたはパスワードが不正です");
 			return "userLogin";
 		}
 		
 		//IDまたはパスワードが正しい場合
 		session.setAttribute("user", loginUser);
-		return "redirect:/review";
+		return "redirect:/book/user/list";
 	
 	}
 	
@@ -63,25 +68,33 @@ public class UserController {
 	
 	@GetMapping("/userAdd")
 	public String userAdd(Model model) {
-		var user = new User();
-		model.addAttribute("user",user);
+		// var user = new User();
+		model.addAttribute("user",new User());
 		return "userAdd";
 	}
 	
 	@PostMapping("/userAdd")
 	public String send(
-			@Valid
+		@Validated(AddGroup.class)
 			@ModelAttribute("user") User user,
 			Errors errors,
+			HttpSession session,
 			Model model
 			) {
 		System.out.println(user);
 		
 		if(errors.hasErrors()) {
+			model.addAttribute("userInfo");
+			return "/userAdd";
+		}
+		
+		else if(user.getLoginPass().length() < 6) {
+			model.addAttribute("userInfo");
 			return "/userAdd";
 		}
 		
 		//新規登録者情報の送信
+		service.addUser(user);
 		return "userAddDone";
 	}
 	

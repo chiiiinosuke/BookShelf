@@ -29,7 +29,7 @@ public class BookController {
 		binder.registerCustomEditor(Date.class, "publicationAt", new CustomDateEditor(sdf, true));
 	}
 	
-	@GetMapping
+	@GetMapping({"", "/list"})
 	public String list() {
 		return "bookList";
 	}
